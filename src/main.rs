@@ -14,26 +14,26 @@ fn main() {
         .subcommand_required(true)
         .subcommand(
             command!("set")
-                .about("set a new record")
+                .about("Set a new record")
                 .arg(
                     clap::Arg::with_name("name")
-                        .help("name of the record")
+                        .help("Name of the record")
                         .required(true)
                         .index(1),
                 )
                 .arg(
                     clap::Arg::with_name("value")
-                        .help("value of the record")
+                        .help("Value of the record")
                         .required(false)
                         .index(2),
                 ),
         )
         .subcommand(
             command!("get")
-                .about("get record")
+                .about("Get a record")
                 .arg(
                     clap::Arg::with_name("name")
-                        .help("name of the record")
+                        .help("Name of the record")
                         .required(true)
                         .index(1),
 
@@ -48,18 +48,18 @@ fn main() {
         )
         .subcommand(
             command!("remove")
-                .about("remove a record")
+                .about("Remove a record")
                 .alias("rm")
                 .arg(
                     clap::Arg::with_name("name")
-                        .help("name of the record")
+                        .help("Name of the record")
                         .required(true)
                         .index(1),
                 ),
         )
         .subcommand(
             command!("list")
-                .about("list all records")
+                .about("List all records")
                 .alias("ls")
         )
         .get_matches();
@@ -79,7 +79,7 @@ fn main() {
                 None => match ctx.get_contents() {
                     Ok(value) => {
                         storage::set_record(name, &value).unwrap();
-                        println!("'{}' set to contents from clipboard", name);
+                        println!("'{}' set to contents from the clipboard", name);
                     },
                     Err(err) => {
                         println!("{}", err);

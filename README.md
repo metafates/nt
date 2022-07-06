@@ -7,18 +7,18 @@ inspired by [boom](https://github.com/holman/boom)
 
 ```
 USAGE:
-nt <SUBCOMMAND>
+    nt <SUBCOMMAND>
 
 OPTIONS:
--h, --help       Print help information
--V, --version    Print version information
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
-get       get record
-help      Print this message or the help of the given subcommand(s)
-list      list all records
-remove    remove a record
-set       set a new record
+    get       Get a record
+    help      Print this message or the help of the given subcommand(s)
+    list      List all records
+    remove    Remove a record
+    set       Set a new record
 ```
 
 
@@ -28,9 +28,9 @@ set       set a new record
 $ nt set magic 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 'magic' set to 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 
-# if not value is given, the value is read from the clipboard
+# if no value is given, the value is read from the clipboard
 $ nt set num
-'num' set to contents from clipboard
+'num' set to contents from the clipboard
 
 $ nt get num
 1
